@@ -6,7 +6,7 @@ function kilometerToMeter(kilometer){
          return meter;
     }
     else {
-        return "Invalid Number." // input positive value
+        return "Please input valid number." // input positive value
     } 
 }
 var result = kilometerToMeter(1);
@@ -41,14 +41,46 @@ function budgetCalculator(clock, phone, labtop){
 
 }
 
-var result = budgetCalculator(0, 1, 1);
+var result = budgetCalculator(1, 1, 10);
 console.log(result);
+//-------------------------------------------------------------------------------
+
+//hotelCost 
+
+function hotelCost (day){
+    if (day<=10 && day>=1 ){
+        var firstValue = day * 100;
+        return firstValue;
+    }
+    if (day >=11 && day <=20){
+        for (var i=0; i<=10;i++ ){
+            var element = [i]*100;
+        }
+        var secondValue = [day -10] * 80;
+        var total = element + secondValue;
+        return total;
+    }
+
+    // if (day >=21){
+    //     for (var i=9; i<=19;i++ ){
+    //         var element2 = [i]*80;
+    //     }
+    //     var thirdValue = [day -20] * 50;
+    //     var total2 = thirdValue + element2;
+    //     return total2;
+    // }
+
+    
+    //var thirdValue = day * 50;
+
+    // return  firstValue;
+    
+
+}
 
 
-
-
-
-
+var result = hotelCost(20);
+console.log(result);
 
 
 
