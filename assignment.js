@@ -1,3 +1,6 @@
+
+
+
 //kilometerToMeter
 
 function kilometerToMeter(kilometer){
@@ -6,108 +9,105 @@ function kilometerToMeter(kilometer){
          return meter;
     }
     else {
-        return "Please input valid number." // invalid number 
+        return "Invalid value" // invalid number 
     } 
 }
-var result = kilometerToMeter(2.5);
+var result = kilometerToMeter(-11.2);
 console.log(result);
-//---------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------
+
+
+
 
 // budgetCalculator
 
 function budgetCalculator(clock, phone, labtop){
     
-    if(clock >= 1 || clock >= 0){
-       var  clockPrice = 50 * clock; // increase clock value
+    if( clock >= 0){
+       var  clockPrice = 50 * clock; // increase sum clock value
     }
-    else{
+    else if (clock <= 0){
         return "Please input 'Clock' valid value"
     }
-    if(phone >= 1 || clock >= 0){
-        var phonePrice = 100 * phone;  // increase phone  price
+
+    if( phone >= 0){
+        var phonePrice = 100 * phone;  // increase sum phone  price
      }
-    else{
-        return "Please input 'Phone' valid value"
-    }
-    if(labtop >= 1 || clock >= 0){
-        var labtopPrice = 500 * labtop;   // increase labtop price
-    }
-    else{
-        return "Please input 'Labtop' valid value"
+    else if (phone <= 0){
+        return "Please input 'phone' valid value"
     }
 
+    if(labtop >= 0){
+        var labtopPrice = 500 * labtop;   // increase sum labtop price
+    }
+    else if (labtop <= 0){
+        return "Please input 'labtop' valid value"
+    }
     const totalPrice = clockPrice + phonePrice + labtopPrice;
     return totalPrice;
-
 }
 
-var result = budgetCalculator(2, 2, 5);
+var result = budgetCalculator(3, -2, 10);
 console.log(result);
-//-------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------
+
+
+
 
 //hotelCost 
 
 function hotelCost (day){
 
     if (day<=10 && day>=1 ){
-        var firstTenDay = day * 100;    //increment  value 
-        return firstTenDay; // sum up first 10 hotel days
+        var firstTenDay = day * 100; 
+        return firstTenDay;    // total first 10 days cost
     }
-    
 
     if (day >=11 && day <=20){
         for (var i=0; i<=10;i++ ){
             var element = [i]*100;
         }
-        var secondTenDay = [day -10] * 80;   // sum up second (10 to 20 day) 10 hotel days
+        var secondTenDay = [day -10] * 80;   
         const SecondValue = element + secondTenDay;
-        return SecondValue;
+        return SecondValue;      // total second (10 to 20 day) 10 days cost
     }
    
     if (day >=21){
         for (var i=0; i<=10;i++ ){
             var element2 = [i]*100;
         }
-        for (var i=0; i<=10;i++ ){
+        for (var i=0; i<=10; i++ ){
             var element3 = [i]*80;
         }
-        var totalDay = element2 + element3 + [day-20]*50;  // sum up total  hotel days
-        return totalDay;
+        var totalDay = element2 + element3 + [day-20] * 50;  
+        return totalDay;  // total hotel days cost
     }
     else {
         return "invalid input number"; // invalid input 
     }
 }
-var result = hotelCost(39);
+var result = hotelCost(21);
 console.log(result);
-//----------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------
+
+
+
 
 //megaFriend
 
 function megaFriend (names){
     var  largestValue = "";
     for (var i = 0; i < names.length; i++ ){
-        var currentItem = names[i];
+        var currentItem = names[i].trim();
         if(currentItem.length > largestValue.length){
             largestValue = names[i];
         }
     }
     return largestValue;
-
 }
-var friendsName = ["nepal", "Nepal Gain", "gain","subrata","mondal","nilanjona","jhankar mahbub vai"];
+var friendsName = ["Jhankar Mahbub Sir", "Nepal Gain" ,"Rahul Gain", "Gopal", "Monisha", "Nilanjona"];
 var arrayName = megaFriend (friendsName);
 console.log(arrayName);
-
-
-
-
-
-
-
-
-
-
-
-
-
