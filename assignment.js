@@ -6,10 +6,10 @@ function kilometerToMeter(kilometer){
          return meter;
     }
     else {
-        return "Please input valid number." // input positive value
+        return "Please input valid number." // invalid number 
     } 
 }
-var result = kilometerToMeter(1);
+var result = kilometerToMeter(2.5);
 console.log(result);
 //---------------------------------------------------------------------------------
 
@@ -41,61 +41,63 @@ function budgetCalculator(clock, phone, labtop){
 
 }
 
-var result = budgetCalculator(1, 1, 10);
+var result = budgetCalculator(2, 2, 5);
 console.log(result);
 //-------------------------------------------------------------------------------
 
 //hotelCost 
 
 function hotelCost (day){
+
     if (day<=10 && day>=1 ){
-        var firstValue = day * 100;
-        return firstValue;
+        var firstTenDay = day * 100;    //increment  value 
+        return firstTenDay; // sum up first 10 hotel days
     }
+    
+
     if (day >=11 && day <=20){
         for (var i=0; i<=10;i++ ){
             var element = [i]*100;
         }
-        var secondValue = [day -10] * 80;
-        var total = element + secondValue;
-        return total;
+        var secondTenDay = [day -10] * 80;   // sum up second (10 to 20 day) 10 hotel days
+        const SecondValue = element + secondTenDay;
+        return SecondValue;
     }
+   
+    if (day >=21){
+        for (var i=0; i<=10;i++ ){
+            var element2 = [i]*100;
+        }
+        for (var i=0; i<=10;i++ ){
+            var element3 = [i]*80;
+        }
+        var totalDay = element2 + element3 + [day-20]*50;  // sum up total  hotel days
+        return totalDay;
+    }
+    else {
+        return "invalid input number"; // invalid input 
+    }
+}
+var result = hotelCost(39);
+console.log(result);
+//----------------------------------------------------------------------------
 
-    // if (day >=21){
-    //     for (var i=9; i<=19;i++ ){
-    //         var element2 = [i]*80;
-    //     }
-    //     var thirdValue = [day -20] * 50;
-    //     var total2 = thirdValue + element2;
-    //     return total2;
-    // }
+//megaFriend
 
-    
-    //var thirdValue = day * 50;
-
-    // return  firstValue;
-    
+function megaFriend (names){
+    var  largestValue = "";
+    for (var i = 0; i < names.length; i++ ){
+        var currentItem = names[i];
+        if(currentItem.length > largestValue.length){
+            largestValue = names[i];
+        }
+    }
+    return largestValue;
 
 }
-
-
-var result = hotelCost(20);
-console.log(result);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var friendsName = ["nepal", "Nepal Gain", "gain","subrata","mondal","nilanjona","jhankar mahbub vai"];
+var arrayName = megaFriend (friendsName);
+console.log(arrayName);
 
 
 
